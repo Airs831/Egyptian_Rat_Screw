@@ -20,6 +20,36 @@ class Deck{
     }
   }
 
+  shuffleDeck = () => {
+    newDeck = [];
+    while (newDeck.length < 52){
+      randIndex = Math.random() * (this.deck.length - 1);
+        newDeck.push(this.deck[randIndex]);
+        this.deck.splice(randIndex,1);
+    }
+    this.deck = newDeck;
+  }
+
+  dealCards = () => {
+    for(let i = 0; i < this.deck.length; i ++) {
+      //use modulo to determine which player gets the card
+      //Create player class with method to allow each player to receive a specific card
+      //have addCard method and playCard() method that alters their array of Cards in their hand
+    }
+  }
+}
+
+class Card{
+  constructor(suit, value){
+    this.suit = suit;
+    this.value = value;
+  }
+  getSuit = () => {
+    return suit;
+  }
+  getValue = () => {
+    return value;
+  }
 }
 
 class Suit{ // done
@@ -27,9 +57,8 @@ class Suit{ // done
     this.color = color;
     this.type = type;
   }
-
   getColor = () => {
-    return this.color
+    return this.color;
   }
 }
 
@@ -40,7 +69,14 @@ class Board {
     for (let i = 0; i < playerCount; i++) {
       this.players.push("Player" + i);
     }
+
   }
 
+  addCardToBoard = (card) => {
+    this.stack.push(card);
+  }
 
+  removeCardFromBoard = () => {
+    this.stack.shift();
+  }
 }
