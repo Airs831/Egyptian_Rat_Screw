@@ -1,15 +1,23 @@
 body {
   background-color: #FEF0C9;
+  text-align: center;
+
+}
+#contatainer {
+  display: inline-block;
   display: flex;
+  /* text-align: center; */
 }
 
 #stack{
-  justify-content: center;
+  /* text-align: center; */
 }
-
+#top{
+  
+}
 .card {
   height: 80px;
-  width: 40px;
+  width: 50px;
   border: 1px solid black;
   border-radius: 10px;
 }
