@@ -29,3 +29,8 @@ Face-cards:
   get three, and Aces get four. If the player fails to play a new face-card, the
   owner of the original face-card receives all the cards in the pot.
   Slaps are permitted during face-card play.
+
+Resources
+http://buildnewgames.com/real-time-multiplayer/
+https://codereview.stackexchange.com/questions/100377/cardshifter-game-lobby
+https://www.pubnub.com/blog/multiplayer-game-lobby-with-pubnub/
