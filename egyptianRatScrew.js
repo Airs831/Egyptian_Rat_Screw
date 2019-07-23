@@ -31,10 +31,19 @@ class Deck{
   }
 
   dealCards = () => {
-    for(let i = 0; i < this.deck.length; i ++) {
-      //use modulo to determine which player gets the card
-      //Create player class with method to allow each player to receive a specific card
-      //have addCard method and playCard() method that alters their array of Cards in their hand
+    for(let i = this.deck.length; i > 0; i ++) {
+      if(i%4 == 0){
+        Player1.addCard(this.deck[i-1]);
+      }
+      else if (i%4 == 1) {
+        Player2.addCard(this.deck[i-1]);
+      }
+      else if (i%4 == 2) {
+        Player3.addCard(this.deck[i-1]);
+      }
+      else {
+        Player4.addCard(this.deck[i-1]);
+      }
     }
   }
 }
@@ -66,10 +75,10 @@ class Suit{ // done
 class Board {
   constructor(playerCount) {
     this.stack = [];
+    this.players = [];
     for (let i = 0; i < playerCount; i++) {
       this.players.push("Player" + i);
     }
-
   }
 
   addCardToBoard = (card) => {
@@ -78,5 +87,41 @@ class Board {
 
   removeCardFromBoard = () => {
     this.stack.shift();
+  }
+
+  checkSlap() {
+    if (this.stack[this.stack.length-1] == this.stack[this.stack.length-3]) {
+      return True;
+    }
+    else if (this.stack[this.stack.length-1] == this.stack[this.stack.length-2]) {
+      return True;
+    }
+    return False;
+  }
+
+  burnCard = (card) => {
+    this.stack.unshift(card);
+  }
+}
+
+class Player {
+  constructor(playerNumber) {
+    this.playerNumber = playerNumber;
+    this.hand = [];
+  }
+
+  playCard() {
+    Board.addCardToBoard(this.hand.shift());
+  }
+
+  slap() {
+    if(checkSlap){
+      this.hand.join(Board.stack);
+    }
+    burn();
+  }
+
+  burn() {
+    Board.burnCard(this.hand.pop());
   }
 }
