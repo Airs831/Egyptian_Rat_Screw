@@ -1,0 +1,22 @@
+- Socket.io is a lib that contains an API for Websockets/NodeJS
+
+- Websockets is an API that allows for persistent connections between clients
+and servers
+
+- Both parties can send/receive data until the connection is closed
+
+--- HTTP vs. Websockets ---
+- HTTP would be like if every time you or your friend wanted to
+share information, you’d have to call each other and then hang up.
+This is great if you just need to share something every once in a while.
+This becomes rather tedious if the required frequency is much higher however.
+
+- Websockets would be like if you or your friend still called each other,
+but just didn’t hang up and left the line open until the project was done.
+
+- File communication (Express)
+  Client asks server for a file
+
+- Package communication (Socket.io)
+  Client sends data to server (Ex: Input)
+  Server sends data to client (Ex. Player Position)
