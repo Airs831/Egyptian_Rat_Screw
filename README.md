@@ -30,7 +30,9 @@ Face-cards:
   owner of the original face-card receives all the cards in the pot.
   Slaps are permitted during face-card play.
 
-Resources
+Resources:
 http://buildnewgames.com/real-time-multiplayer/
 https://codereview.stackexchange.com/questions/100377/cardshifter-game-lobby
 https://www.pubnub.com/blog/multiplayer-game-lobby-with-pubnub/
+https://stackoverflow.com/questions/5100152/multiplayer-game-on-google-app-engine
+https://sites.google.com/site/egyptianrs/home
