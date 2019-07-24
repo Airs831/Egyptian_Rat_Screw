@@ -16,6 +16,7 @@ body {
 }
 #button{
   display: inline-block;
+  z-index: 5;
 }
 
 .button{
@@ -24,15 +25,20 @@ body {
   background-color: lightBlue;
   border-radius: 20px;
   font-size: 30px;
+  z-index: 5;
+
 }
 
 .button:hover {
-  background-color: red;
-  transform:translate(2.8px,-2.8px);
+  background-color: lightGreen;
+  transform: translate(2.8px,-2.8px);
   border-radius:80px;
 }
-
+.button:active{
+  background-color:blue;
+}
 #stack, #container, #playerCardsContainer, body{
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,11 +48,12 @@ body {
 }
 #container {
   position: fixed;
-  padding-top: 10%;
   margin:0;
-  top:0;
+  top:20%;
   left:5%;
   width: 90%;
+  z-index: 1;
+
 }
 #topContainer{
   display: flex;
@@ -60,15 +67,14 @@ body {
 }
 
 #right, #left {
-  margin-bottom: 10%;
+  margin-bottom: 15%;
 }
 
-.deck{
-  background-color: lightBlue;
-}
+
 
 #playerCardsContainer{
   justify-content: space-between;
+  z-index: 1;
 }
 
 .card {
@@ -76,4 +82,23 @@ body {
   width: 70px;
   border: 5px solid black;
   border-radius: 10px;
+  background-color: red;
+}
+.deck{
+  background-color: lightBlue;
+}
+#one{
+  position: absolute;
+  left: 48%;
+  transform: rotate(20deg);
+}
+#two{
+  position: absolute;
+  left: 48%;
+  transform: rotate(60deg);
+}
+#three{
+  position: absolute;
+  left: 48%;
+  transform: rotate(120deg);
 }
