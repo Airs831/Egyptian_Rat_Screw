@@ -36,24 +36,29 @@ class Deck{
     //allows deck field to be reassigned to the fully shuffled version.
     this.deck = newDeck;
   }
-
-  //uses remainder to determine which player gets a card
-  //adds card to the player's deck while removing card from the global deck
   dealCards = () => {
-    for(let i = this.deck.length; i > 0; i ++) {
-      if(i%4 == 0){
-        Player1.addCard(this.deck.pop(this.deck[i-1]));
-      }
-      else if (i%4 == 1) {
-        Player2.addCard(this.deck.pop(this.deck[i-1]));
-      }
-      else if (i%4 == 2) {
-        Player3.addCard(this.deck.pop(this.deck[i-1]));
-      }
-      else {
-        Player4.addCard(this.deck.pop(this.deck[i-1]));
-      }
-    }
+    position = 51
+    while (this.deck.length > 0):
+      for  (let i = Board.players.length-1; i >= 0; i--):
+        Board.players[i].hand.append(Board.deck[position]);
+        position -= 1;
+
+    // for(let i = this.deck.length; i > 0; i-=Board.playerCount) {
+    //   //assign playerNumber state to player class
+    //   //use nested for loop to assign a card to each player using created state
+    //   if(i%4 == 0){
+    //     Player1.addCard(this.deck.pop(this.deck[i-1]));
+    //   }
+    //   else if (i%4 == 1) {
+    //     Player2.addCard(this.deck.pop(this.deck[i-1]));
+    //   }
+    //   else if (i%4 == 2) {
+    //     Player3.addCard(this.deck.pop(this.deck[i-1]));
+    //   }
+    //   else {
+    //     Player4.addCard(this.deck.pop(this.deck[i-1]));
+    //   }
+    // }
   }
 
   getDeck = () => {
@@ -94,7 +99,7 @@ class Board {
     this.stack = [];
     this.players = [];
     for (let i = 0; i < playerCount; i++) {
-      this.players.push("Player" + i);
+      this.players.push(new Player(i));
     }
   }
 
