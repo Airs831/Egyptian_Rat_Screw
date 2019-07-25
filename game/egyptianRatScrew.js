@@ -32,11 +32,13 @@ class Deck{
 
   }
 
+  deckname.
+
   //Go through each suit and assign every card a value. Results in 52 cards in the global deck
   populateDeck = () => {
     for (let i = 0; i < this.suits.length; i++) {
       for (let j = 0; j < this.values.length; j++) {
-        this.deck.push[this.suits[i]+ " of " + this.values[j]];
+        this.deck.push[new Card(this.suits(i), this.values(j))];
       }
     }
   }
@@ -57,11 +59,11 @@ class Deck{
   }
   dealCards = () => {
     position = 51
-    while (this.deck.length > 0):
-      for  (let i = Board.players.length-1; i >= 0; i--):
+    while (this.deck.length > 0){
+      for  (let i = Board.players.length-1; i >= 0; i--){
         Board.players[i].hand.append(Board.deck[position]);
         position -= 1;
-
+      }
     // for(let i = this.deck.length; i > 0; i-=Board.playerCount) {
     //   //assign playerNumber state to player class
     //   //use nested for loop to assign a card to each player using created state
@@ -78,6 +80,7 @@ class Deck{
     //     Player4.addCard(this.deck.pop(this.deck[i-1]));
     //   }
     // }
+    }
   }
 
   getDeck = () => {
@@ -103,11 +106,12 @@ class Card{
   getValue = () => {
     return value;
   }
-
-  describe(self) = () => {
-    return "The card is the %s of %d" % (self.value, self.suit);
-  }
 }
+
+//   describe(self) = () => {
+//     return "The card is the %s of %d" % (self.value, self.suit);
+//   }
+// }
 
 class Suit{
   /*
