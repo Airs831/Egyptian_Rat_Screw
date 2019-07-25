@@ -1,5 +1,6 @@
 body {
-  background-color: #FEF0C9;
+  /* background-color: #FEF0C9; */
+  background-color: #FEAE51FF;
   position: fixed;
   justify-content: center;
   flex-direction: column;
@@ -9,24 +10,44 @@ body {
   left:0;
 }
 
+@font-face {
+  font-family: Egyptian, sans-serif;
+  src: url(/Users/cssi/Desktop/fonts/EgyptianFreehand.ttf);
+  font-weight: bold;
+}
+
 #title{
   text-align: center;
   font-size: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  border: 5px solid black;
+  border-radius: 40px;
+  padding: 10px;
+  color: black;
+  background-color: #C5299BFF;
+  animation: pulsate 3.5s infinite;
+  animation-timing-function: ease-in-out;
+  font-family: Egyptian;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
 #button{
   display: inline-block;
-  z-index: 5;
 }
 
 .button{
   width: 100px;
   height: 50px;
-  background-color: lightBlue;
+  /* background-color: lightBlue; */
+  background-color: #963CBDFF;
+  border: 1px solid black;
   border-radius: 20px;
   font-size: 30px;
   z-index: 5;
-
 }
 
 .button:hover {
@@ -35,14 +56,15 @@ body {
   border-radius:80px;
 }
 .button:active{
-  background-color:blue;
+  transform: translate(-2.8px,2.8px);
+  background-color: green;
 }
-#stack, #container, #playerCardsContainer, body{
 
+#stack, #container, #playerCardsContainer, body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95%;
+  height: 90%;
   left: 10%;
   width: 80%;
 }
@@ -52,7 +74,7 @@ body {
   top:20%;
   left:5%;
   width: 90%;
-  z-index: 1;
+  margin-top: 2%;
 
 }
 #topContainer{
@@ -64,13 +86,23 @@ body {
 }
 #stack{
   padding-top: 3.5%;
+  margin-top: 2%;
+
 }
 
 #right, #left {
   margin-bottom: 15%;
 }
 
-
+#initialDeck{
+  position: absolute;
+  padding-top: 15%;
+  top:50;
+  left:50;
+}
+#initialCard{
+  animation: moveCards 2s infinite;
+}
 
 #playerCardsContainer{
   justify-content: space-between;
@@ -82,23 +114,83 @@ body {
   width: 70px;
   border: 5px solid black;
   border-radius: 10px;
-  background-color: red;
+  /* background-color: red; */
+    background-color: #C5299BFF;
 }
 .deck{
-  background-color: lightBlue;
+  /* background-color: lightBlue; */
+  background-color: #FF6F61FF
 }
 #one{
   position: absolute;
   left: 48%;
   transform: rotate(20deg);
+  animation: moveCards 3s infinite;
 }
 #two{
   position: absolute;
   left: 48%;
   transform: rotate(60deg);
+  animation: dealCards 3s infinite;
+  animation-delay: .4s;
 }
+
 #three{
   position: absolute;
   left: 48%;
   transform: rotate(120deg);
+}
+
+@keyframes moveCards{
+  0% {
+    left: 50;
+    transform: rotate(40deg);
+  }
+  20%{
+    transform: rotate(80deg);
+  }
+  100%{
+    left: 0;
+    transform: rotate(355deg);
+  }
+}
+
+@keyframes moveDown{
+  0% {
+    left: 50;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes dealCards {
+  0% {
+    left: 50;
+    top:0px;
+  }
+
+  50%{
+    top:50px;
+  }
+
+  100%{
+    left: 50;
+    top: 100px;
+  }
+}
+
+
+
+@keyframes pulsate {
+    0% {
+        opacity:1
+      }
+    70% {
+        opacity:.7
+    }
+
+    100% {
+        opacity:1;
+    }
 }
