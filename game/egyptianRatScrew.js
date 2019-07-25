@@ -1,7 +1,11 @@
 class Deck{
+  /*
+  deck = the starting deck that will be shuffled and deal cards to the players
+  suits = different suits and colors associated with suits to use in the for loop to create Deck
+  values = different values that can be tied to all 4 suits so we can create the deck with a for loop
+  */
   constructor() {
     this.deck = []; //The entire deck of cards that players will receive cards from
-
     //Arrays necessary to populate the deck
     this.suits = [
       new Suit("Hearts", "red"),
@@ -67,6 +71,11 @@ class Deck{
 }
 
 class Card{
+  /*
+    suit = hearts, diamonds, clubs, spades
+    values = all available values in a traditional deck of cards
+    getSuit, getValue, and descrbie are all methods for testing and determining card states
+  */
   constructor(suit, value){
     this.suit = suit;
     this.value = value;
@@ -79,9 +88,18 @@ class Card{
   getValue = () => {
     return value;
   }
+
+  describe(self) = () => {
+    return "The card is the %s of %d" % (self.value, self.suit);
+  }
 }
 
-class Suit{ // done
+class Suit{
+  /*
+  type = the specific suit
+  color = red or black
+  getColor should be used for CSS to assign color of card??
+  */
   constructor(type, color) {
     this.color = color;
     this.type = type;
@@ -95,6 +113,15 @@ class Suit{ // done
 
 
 class Board {
+  /*
+    stack = cards in play; slappable cards that impact when players can play a card or slap
+    players = list of players (should we include usernames for the future??) in lobby
+    addCardToBoard will be activated whenever a player clicks the lmb, adding a card to the top of the stack
+    removeCardFromBoard will ....!
+    checkSlap determines if the slap was valid according to the rules in the readme, and will be activted on spacebar press
+    burnCard will be activated if checkSlap returns false, and removes a card from the top of the player's hand and places it on bottom of stack
+    getPlayers returns list of players in the game
+  */
   constructor(playerCount) {
     this.stack = [];
     this.players = [];
@@ -139,6 +166,11 @@ class Board {
 }
 
 class Player {
+  /*
+    playerNumber is the player identifier
+    hand is the list of cards that the player currently owns and must play cards from
+    playCard removes card from player's hand and places it on top of the boards' stack
+  */
   constructor(playerNumber) {
     this.playerNumber = playerNumber;
     this.hand = [];
