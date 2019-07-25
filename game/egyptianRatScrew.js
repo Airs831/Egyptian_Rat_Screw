@@ -1,3 +1,18 @@
+const deck_of_cards = ["A1","A2","A3","A4", "A5","A6"]
+const dealCards = document.querySelector('#deal').addEventListener('click', function(){
+
+
+  for(i=0;i<10;i++){
+    let temp ="#" + deck_of_cards[i]
+    console.log(temp);
+    let temp2 = document.querySelector(temp);
+    console.log(temp2);
+    temp2.classList.add("dealingDeck");
+  }
+
+  })
+
+
 class Deck{
   constructor() {
     this.deck = []; //The entire deck of cards that players will receive cards from

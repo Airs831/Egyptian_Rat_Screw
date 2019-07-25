@@ -7,7 +7,7 @@ body {
   padding:0;
   margin:0;
   top:0;
-  left:0;
+
 }
 
 @font-face {
@@ -85,7 +85,7 @@ a {
   height: 85%;
 }
 #stack{
-  padding-top: 3.5%;
+  padding-top: 5%;
   margin-top: 2%;
 
 }
@@ -94,14 +94,10 @@ a {
   margin-bottom: 15%;
 }
 
-#initialDeck{
+.initialDeck{
   position: absolute;
-  padding-top: 15%;
-  top:50;
-  left:50;
-}
-#initialCard{
-  animation: moveCards 2s infinite;
+  top:90%;
+  left:0;
 }
 
 #playerCardsContainer{
@@ -115,7 +111,7 @@ a {
   border: 5px solid black;
   border-radius: 10px;
   /* background-color: red; */
-    background-color: #C5299BFF;
+  background-color: #C5299BFF;
 }
 .deck{
   /* background-color: lightBlue; */
@@ -125,13 +121,13 @@ a {
   position: absolute;
   left: 48%;
   transform: rotate(20deg);
-  animation: moveCards 3s infinite;
+  animation: moveCards 2.5s infinite;
 }
 #two{
   position: absolute;
   left: 48%;
   transform: rotate(60deg);
-  animation: dealCards 3s infinite;
+  animation: moveDown 2.5s infinite;
   animation-delay: .4s;
 }
 
@@ -146,51 +142,55 @@ a {
     left: 50;
     transform: rotate(40deg);
   }
-  20%{
-    transform: rotate(80deg);
+  15%{
+    transform: rotate(90deg);
   }
   100%{
-    left: 0;
+    left: 5%;
     transform: rotate(355deg);
   }
 }
 
 @keyframes moveDown{
   0% {
-    left: 50;
+    top: 50%
   }
   100% {
-    left: 0;
+    top: 95%;
+    transform: rotate(360deg);
   }
 }
 
 @keyframes dealCards {
   0% {
-    left: 50;
-    top:0px;
-  }
-
-  50%{
-    top:50px;
+    left: 10%;
+    top: 80%;
   }
 
   100%{
-    left: 50;
-    top: 100px;
+    left: 50%;
+    top: 40%;
+    transform: rotate(360deg);
   }
 }
 
 
 
 @keyframes pulsate {
-    0% {
-        opacity:1
-      }
-    70% {
-        opacity:.7
-    }
+0% {
+opacity:1
+}
+70% {
+opacity:.7
+}
+100% {
+opacity:1;
+}
+}
 
-    100% {
-        opacity:1;
-    }
+
+.dealingDeck {
+
+  animation: dealCards 2s infinite;
+
 }
