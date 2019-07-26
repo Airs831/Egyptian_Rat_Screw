@@ -1,17 +1,22 @@
 const deck_of_cards = ["A1","A2","A3","A4", "A5","A6"]
 const dealCards = document.querySelector('#deal').addEventListener('click', function(){
+console.log("hi");
 
-
-  for(i=0;i<10;i++){
-    let temp ="#" + deck_of_cards[i]
-    console.log(temp);
-    let temp2 = document.querySelector(temp);
-    console.log(temp2);
-    temp2.classList.add("dealingDeck");
+const loop = () => {
+  i = -1;
+  setTimeout(()=> {
+    i++
+    if (i <8){
+      let temp ="#" + deck_of_cards[i]
+      console.log(temp);
+      let temp2 = document.querySelector(temp);
+      console.log(temp2);
+      temp2.classList.add("dealingDeck");
+    }
+    loop()
+  }, 600)
   }
-
-  })
-
+})
 
 class Deck{
   /*
@@ -32,7 +37,7 @@ class Deck{
 
   }
 
-  deckname.
+
 
   //Go through each suit and assign every card a value. Results in 52 cards in the global deck
   populateDeck = () => {
