@@ -1,6 +1,6 @@
 body {
   /* background-color: #FEF0C9; */
-  background-color: #FEAE51FF;
+  background-color:  #f6f0e2;
   position: fixed;
   justify-content: center;
   flex-direction: column;
@@ -21,10 +21,11 @@ body {
   font-size: 50px;
   margin-bottom: 30px;
   border: 5px solid black;
+  margin-top: 3%;
   border-radius: 40px;
   padding: 10px;
   color: black;
-  background-color: #C5299BFF;
+  background-color: #e97569;
   animation: pulsate 3.5s infinite;
   animation-timing-function: ease-in-out;
   font-family: Egyptian;
@@ -43,7 +44,7 @@ a {
   width: 100px;
   height: 50px;
   /* background-color: lightBlue; */
-  background-color: #963CBDFF;
+  background-color: #f7dda1;
   border: 1px solid black;
   border-radius: 20px;
   font-size: 30px;

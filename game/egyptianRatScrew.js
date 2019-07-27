@@ -3,17 +3,19 @@ const dealCards = document.querySelector('#deal').addEventListener('click', func
 console.log("hi");
 
 const loop = () => {
-  i = -1;
+
   setTimeout(()=> {
-    i++
+    let i =0
     if (i <8){
       let temp ="#" + deck_of_cards[i]
       console.log(temp);
       let temp2 = document.querySelector(temp);
       console.log(temp2);
       temp2.classList.add("dealingDeck");
+      i++
+      loop()
     }
-    loop()
+
   }, 600)
   }
 })
